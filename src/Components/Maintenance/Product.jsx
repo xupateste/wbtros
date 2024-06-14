@@ -53,7 +53,7 @@ export default function Product({name1, name2, bg, logo, description, cta, hero,
 	            alt="#"
 	          />
 	        </Box>
-	        <Stack pt={5} align={'left'}>
+	        <Stack pt={6} align={'left'}>
 	          <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500} mt={-5}>
 	            {name1}
 	          </Heading>

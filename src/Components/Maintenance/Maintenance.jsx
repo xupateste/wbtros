@@ -155,9 +155,9 @@ export default function Maintenance() {
                 textAlign="center"
                 py={0}
               >
-                  Las Tecnologías Cloud. <br />
+                  Las Tecnologías Cloud<br />
                 <Text as={'span'} color={'cyan.400'}>
-                  para la Industria Ferretera.
+                  para la Industria Ferretera
                 </Text>
               </Heading>
               <Text color={'gray.500'} py={{base:2 ,sm:8}}>
@@ -182,7 +182,7 @@ export default function Maintenance() {
             hero="FERRETERIAS INTELIGENTES"
             name1="Desarrollado para Ferreteros."
             name2="Desarrollado para ti."
-            description="250+ ferreteros como tú ya confían en nuestra tecnología. Desde el abastecimiento inteligente hasta la facturación electrónica, nosotros nos encargamos de todo – para que usted pueda concentrarse en lo que mejor sabe hacer."
+            description="250+ ferreteros como tú ya confían en nuestra tecnología. Desde el abastecimiento inteligente del inventario hasta la facturación electrónica, nosotros nos encargamos de todo – para que usted pueda concentrarse en lo que mejor sabe hacer."
             bg="yellow.400"
             logo={logofacturacion}
             cta="Ir a Ferreteros.App Facturación"
