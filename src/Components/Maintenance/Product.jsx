@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react'
 import logoblack from "../../Images/ferreteros-app-black.png";
 
+import Right from "../Icons/Right"
 
 export default function Product({name1, name2, bg, logo, description, cta, hero, href}) {
 	return (
@@ -25,7 +26,9 @@ export default function Product({name1, name2, bg, logo, description, cta, hero,
 	        boxShadow={'2xl'}
 	        rounded={'lg'}
 	        pos={'relative'}
-	        zIndex={1}>
+	        zIndex={1}
+	        width="100%"
+	       >
 	        <Flex>
 	        	<Text
 	        		bg="white"
@@ -43,15 +46,25 @@ export default function Product({name1, name2, bg, logo, description, cta, hero,
 	          rounded={'lg'}
 	          mt={3}
 	          mr={18}
+	          width={{base:"110%", sm: "90%", lg:"75%"}}
+	          h={{base:"48px", sm:"38px", lg: "40px"}}
 	        >
-	          <Image
-	            // rounded={'lg'}
-	            // height={230}
-	            // width={282}
-	            // objectFit={'cover'}
-	            src={logo}
-	            alt="#"
-	          />
+	          <Box
+              // w={{base:"40%", sm:"25%"}}
+              // src={logoblack}
+              alt="logo"
+              backgroundImage={`url(${logo})`}
+              backgroundPosition="center"
+              backgroundRepeat="no-repeat"
+              backgroundSize="cover"
+              border="none"
+              // flexShrink={1}
+              w="100%"
+              h="100%"
+              // opacity={1}
+              // transition="opacity 500ms ease-in"
+            >
+            </Box>  
 	        </Box>
 	        <Stack pt={6} align={'left'}>
 	          <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500} mt={-5}>
@@ -63,11 +76,11 @@ export default function Product({name1, name2, bg, logo, description, cta, hero,
 	          <Text>
 	          	{description}
 	          </Text>
-	          <Stack direction={'row'} align={'left'}>
-	            <Link href={href} fontWeight={600} fontSize={'lg'}>
-	              {cta} 
-	            </Link>
-	          </Stack>
+	          <Link href={href} fontWeight={600} fontSize={'lg'}>
+		          <Flex direction={'row'} align={'left'}>
+		          	{cta} <Right/>
+		          </Flex>
+	          </Link>
 	        </Stack>
 	      </Box>
 	    </Center>
