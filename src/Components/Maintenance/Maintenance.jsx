@@ -188,7 +188,7 @@ export default function Maintenance() {
               >
                   La Industria Ferretera<br />
                 <Text as={'span'} color={'cyan.400'}>
-                  Redefinida.
+                  Redefinida
                 </Text>
               </Heading>
               <Center textAlign="center" fontSize={{base:"md", sm:"xl"}} color={'gray.500'} pt={{base:2, sm:8}}>
@@ -300,7 +300,7 @@ export default function Maintenance() {
             <Stack
             >
               <Text color={'cyan.400'} letterSpacing="1px" fontSize={{ base: 'md', sm: 'lg'}} fontWeight={700}>
-                🏳️ Soluciones
+                🏳️ Nuestras Soluciones
               </Text>
               <Heading
                 fontWeight={700}
@@ -376,7 +376,7 @@ export default function Maintenance() {
               spacing={4}
               justify={'center'}
               align={'center'}>
-              <Flex height={{base:"27px", sm:"35px", md:"45px"}} w={{base:"43%",  sm:"33%", md:"28%"}}>
+              <Flex height={{base:"30px", sm:"35px", md:"45px"}} w={{base:"43%",  sm:"33%", md:"28%"}}>
                 <Box
                   // w={{base:"40%", sm:"25%"}}
                   // src={logoblack}
@@ -399,7 +399,7 @@ export default function Maintenance() {
                   Inicio
                 </Box>
                 <Box as="a" href={'#'}>
-                  ¿Por que?
+                  Visión
                 </Box>
                 <Box as="a" href={'#'}>
                   Soluciones

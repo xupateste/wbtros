@@ -24,7 +24,18 @@ import Goal from "./Goal"
 export default function Vision() {
 	return (
     // <Container maxW={'5xl'}>
-    <Grid templateColumns={{ base: 'repeat(1, 1fr)', sm:'repeat(2, 1fr)', lg:'repeat(4, 1fr)' }} gap={4} pt={2}>
+    // <Grid templateColumns={{ base: 'repeat(1, 1fr)', sm:'repeat(2, 1fr)', lg:'repeat(4, 1fr)' }} gap={4} pt={2}>
+    <Grid alignItems="flex-start"
+      px={2}
+      pt={2}
+      // gridAutoColumns="minmax(280px,280px)"
+      gridAutoColumns={{base:250, sm:230}}
+      gridAutoFlow="column"
+      // gridGap={{base: 4, sm: 6}}
+      overflowX="auto"
+      overflowY="hidden"
+      gridGap={{base: 3, sm: 4}}
+    >
       <Goal
         name1="Socio de"
         name2="la Industria"

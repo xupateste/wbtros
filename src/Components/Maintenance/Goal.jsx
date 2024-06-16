@@ -23,7 +23,7 @@ export default function Goal({name1, name2, description}) {
 	        // maxW={'330px'}
 	        // w={'full'}
 	        bg={"white"}
-	        boxShadow={'2xl'}
+	        boxShadow={'xl'}
 	        rounded={'lg'}
 	        pos={'relative'}
 	        zIndex={1}
