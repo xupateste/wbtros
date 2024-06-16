@@ -238,6 +238,7 @@ export default function Maintenance() {
                   bg="cyan.500"
                   color="white"
                   size={{base: "md", sm:"lg"}}
+                  fontSize={{base:"sm", sm: "lg"}}
                   w="full"
                   rounded="md"
                   _hover={{
@@ -359,7 +360,7 @@ export default function Maintenance() {
             cta="Ir a Ferreteros.App Ferretero.IA"
             href="https://ferreteros.app"
           />
-          
+
           <Product
             hero="COMPROBANTES ILIMITADOS"
             name1="Más tiempo con tus Clientes."
