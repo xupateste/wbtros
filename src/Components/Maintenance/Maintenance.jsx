@@ -188,7 +188,7 @@ export default function Maintenance() {
               >
                   La Industria Ferretera<br />
                 <Text as={'span'} color={'cyan.400'}>
-                  Redefinida
+                  Rediseñada
                 </Text>
               </Heading>
               <Center textAlign="center" fontSize={{base:"md", sm:"xl"}} color={'gray.500'} pt={{base:2, sm:8}}>
@@ -235,16 +235,28 @@ export default function Maintenance() {
                   borderColor="white"
                   focusBorderColor="white"
                   shadow="md"
+                  bg="cyan.500"
+                  color="white"
                   size={{base: "md", sm:"lg"}}
                   w="full"
-                  rounded="md">
-                  <option selected hidden disabled value="">Que te trae hoy por aquí? *</option>
+                  rounded="md"
+                  _hover={{
+                        color: "black"
+   // 86                  color: isDarkMode ? "white" : "black",
+                      }}
+                >
+                  <option selected hidden disabled value="">¿Qué te trae por aquí hoy? *</option>
                   <option>Quiero un software para mi Ferretería</option>
                   <option>Mi negocio ya usa un software</option>
                   <option>Soy Fabricante, Distribuidor o Importador</option>
                 </Select>
               </FormControl>
-              <Button size={{base:"lg", sm:"lg"}} onClick={()=> {}} borderColor="cyan.200" borderWidth={4} shadow="md">
+              <Button size={{base:"lg", sm:"lg"}} onClick={()=> {}}  bg="white" borderColor="cyan.200" borderWidth={4} shadow="md"
+               _hover={{
+                        bg: "white"
+   // 86                  color: isDarkMode ? "white" : "black",
+                      }}
+              >
                 Continuar <Right/>
               </Button>
             </Grid>
@@ -314,8 +326,19 @@ export default function Maintenance() {
             </Stack>
           </Box>
         </Grid>
-        <Grid templateColumns={{sm:'repeat(2, 1fr)', base: 'repeat(1, 1fr)'}} gap={8} pt={5}>
-	        <Product
+        <Grid templateColumns={{sm:'repeat(2, 1fr)', base: 'repeat(1, 1fr)'}} gap={8} pt={5}>	        
+          <Product
+            hero="FERRETERIAS INTELIGENTES"
+            name1="Desarrollado para Ferreteros."
+            name2="Desarrollado para ti."
+            description="Más de 250 ferreteros como tú ya confían en nuestra tecnología. Desde el abastecimiento inteligente del inventario hasta la facturación electrónica, nos encargamos de todo para que puedas concentrarte en lo que mejor sabes hacer."
+            bg="yellow.400"
+            logo={logopuntoventa}
+            cta="Ir a Ferreteros.App PuntoVenta"
+            href="https://ferreteros.app"
+          />
+
+          <Product
             hero="PEDIDOS ILIMITADOS"
             name1="Reserva rápida de pedidos."
             name2="Para pedidos grandes."
@@ -327,16 +350,6 @@ export default function Maintenance() {
           />
 
           <Product
-            hero="FERRETERIAS INTELIGENTES"
-            name1="Desarrollado para Ferreteros."
-            name2="Desarrollado para ti."
-            description="Más de 250 ferreteros como tú ya confían en nuestra tecnología. Desde el abastecimiento inteligente del inventario hasta la facturación electrónica, nos encargamos de todo para que puedas concentrarte en lo que mejor sabes hacer."
-            bg="yellow.400"
-            logo={logopuntoventa}
-            cta="Ir a Ferreteros.App PuntoVenta"
-            href="https://ferreteros.app"
-          />
-	        <Product
             hero="ASISTENTE TODOPODEROSO"
             name1="Respuestas Precisas."
             name2="Decisiones Confiables."
@@ -346,6 +359,7 @@ export default function Maintenance() {
             cta="Ir a Ferreteros.App Ferretero.IA"
             href="https://ferreteros.app"
           />
+          
           <Product
             hero="COMPROBANTES ILIMITADOS"
             name1="Más tiempo con tus Clientes."
@@ -371,12 +385,12 @@ export default function Maintenance() {
           >
             <Container
               as={Stack}
-              maxW={'6xl'}
+              maxW={'5xl'}
               py={4}
               spacing={4}
               justify={'center'}
               align={'center'}>
-              <Flex height={{base:"30px", sm:"35px", md:"45px"}} w={{base:"43%",  sm:"33%", md:"28%"}}>
+              <Flex height={{base:"30px", sm:"35px", md:"45px"}} w={{base:"48%",  sm:"33%", md:"28%"}}>
                 <Box
                   // w={{base:"40%", sm:"25%"}}
                   // src={logoblack}
@@ -430,7 +444,7 @@ export default function Maintenance() {
                   <Link label={'YouTube'} href={'https://www.youtube.com/@FerreterosApp'}>
                     <Youtube />
                   </Link>
-                  <Link label={'LinkedIn'} href={'#'}>
+                  <Link label={'LinkedIn'} href={'https://linkedin.com/company/ferreterosapp'}>
                     <LinkedIn />
                   </Link>
                   <Link label={'Twitter'} href={'https://x.com/FerreterosApp'}>
