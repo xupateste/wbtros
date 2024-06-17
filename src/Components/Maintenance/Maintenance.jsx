@@ -186,9 +186,10 @@ export default function Maintenance() {
                 textAlign="center"
                 py={0}
               >
-                  La Industria Ferretera<br />
-                <Text as={'span'} color={'cyan.400'}>
-                  Rediseñada
+              La Revolución en
+                <br />
+              <Text as={'span'} color={'cyan.400'}>
+                  la Industria Ferretera
                 </Text>
               </Heading>
               <Center textAlign="center" fontSize={{base:"md", sm:"xl"}} color={'gray.500'} pt={{base:2, sm:8}}>
