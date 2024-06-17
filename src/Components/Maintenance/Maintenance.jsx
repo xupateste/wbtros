@@ -157,7 +157,7 @@ export default function Maintenance() {
                 
                 // width={48}
               >
-                <Flex height={{base:"27px", sm:"35px", md:"45px"}} w={{base:"43%",  sm:"33%", md:"28%"}}>
+                <Flex height={{base:"27px", sm:"35px", md:"38px", lg:"50px"}} w={{base:"45%",  sm:"33%", md:"29%", lg:"30%"}}>
                   <Box
                     // w={{base:"40%", sm:"25%"}}
                     // src={logoblack}
@@ -243,9 +243,8 @@ export default function Maintenance() {
                   w="full"
                   rounded="md"
                   _hover={{
-                        color: "black"
-   // 86                  color: isDarkMode ? "white" : "black",
-                      }}
+                            color: "black"
+                          }}
                 >
                   <option selected hidden disabled value="">¿Qué te trae por aquí hoy? *</option>
                   <option>Quiero un software para mi Ferretería</option>
@@ -256,7 +255,6 @@ export default function Maintenance() {
               <Button size={{base:"lg", sm:"lg"}} onClick={()=> {}}  bg="white" borderColor="cyan.200" borderWidth={4} shadow="md"
                _hover={{
                         bg: "white"
-   // 86                  color: isDarkMode ? "white" : "black",
                       }}
               >
                 Continuar <Right/>
@@ -345,7 +343,7 @@ export default function Maintenance() {
             name1="Reserva rápida de pedidos."
             name2="Para pedidos grandes."
             description="Ya sea que estés buscando crear una tienda desde cero o quieras algo ya más preparado, comienza con un catálogo potente y fácil de usar y permite a tus clientes realizar un pedido fácilmente. Esta herramienta tiene opciones para cada negocio."
-            bg="cyan.400"
+            bg="cyan.500"
             logo={logocatalogos}
             cta="Ir a Ferreteros.App Catálogos"
             href="https://catalogos.ferreteros.app"
@@ -392,7 +390,7 @@ export default function Maintenance() {
               spacing={4}
               justify={'center'}
               align={'center'}>
-              <Flex height={{base:"30px", sm:"35px", md:"45px"}} w={{base:"48%",  sm:"33%", md:"28%"}}>
+              <Flex height={{base:"42px", sm:"36px", md:"45px"}} w={{base:"75%",  sm:"60%", md:"36%", lg:"29%"}}>
                 <Box
                   // w={{base:"40%", sm:"25%"}}
                   // src={logoblack}
