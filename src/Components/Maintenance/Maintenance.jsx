@@ -16,6 +16,7 @@ import {
   Flex,
   Card,
   FormControl,
+  FormErrorMessage,
   Link,
   FormLabel,
   Button,
@@ -26,7 +27,15 @@ import {
   createIcon,
   Image,
   Grid,
-  GridItem
+  GridItem,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from '@chakra-ui/react'
 import logoblack from "../../Images/ferreteros-app-black.png";
 import logocatalogos from "../../Images/ferreteros-app-catalogos.png";
@@ -61,8 +70,47 @@ export default function Maintenance() {
   }, []);
 
   const particlesLoaded = (container) => {
-    console.log(container);
+    // console.log(container);
   };
+
+  const [isSelected, setSelected] = useState(true)
+  const [option, setOption] = useState("")
+
+  const { isOpen: isSFOpen , onOpen: onSFOpen, onClose: onSFClose } = useDisclosure()
+  const { isOpen: isTSOpen , onOpen: onTSOpen, onClose: onTSClose } = useDisclosure()
+  const { isOpen: isSFDIOpen , onOpen: onSFDIOpen, onClose: onSFDIClose } = useDisclosure()
+
+
+  // const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen: isPVOpen , onOpen: onPVOpen, onClose: onPVClose } = useDisclosure()
+  const { isOpen: isIAOpen , onOpen: onIAOpen, onClose: onIAClose } = useDisclosure()
+  // const { isOpen: isDeleteOpen , onOpen: onDeleteOpen, onClose: onDeleteClose } = useDisclosure()
+
+  const handleContinue = () => {
+    // if (!isSelected) { setSelected(false) }
+    // setSelected(true)
+    // console.log(option)
+    switch(option) {
+      case "" :
+        setSelected(false)
+        break;
+      case "SF":
+        setSelected(true)
+        onSFOpen();
+        break;
+      case "TS":
+        setSelected(true)
+        onTSOpen();
+        break;
+      case "SFDI":
+        setSelected(true)
+        onSFDIOpen();
+        break;
+      default :
+        break;
+    }
+
+  }
 
   const options = useMemo(
     () => ({
@@ -230,32 +278,33 @@ export default function Maintenance() {
             <Grid templateColumns={{sm:'repeat(2, 1fr)', base: 'repeat(1, 1fr)'}} px={{base:0, sm:20}} gap={4} mt={2}>
               <FormControl>
                 <Select
-                  id="country"
-                  name="country"
-                  autoComplete="country"
                   borderColor="white"
                   focusBorderColor="white"
                   shadow="md"
                   bg="cyan.500"
                   color="white"
+                  isInvalid={!isSelected}
+                  onChange={(e) => {setOption(e.target.value);  e.target.blur()}}
                   size={{base: "md", sm:"lg"}}
                   fontSize={{base:"sm", sm: "lg"}}
+                  defaultValue=""
                   w="full"
                   rounded="md"
-                  _hover={{
+                  _focus={{
                             color: "black"
                           }}
+                  _hover={{
+                            boderColor: "white"
+                          }}
                 >
-                  <option selected hidden disabled value="">¿Qué te trae por aquí hoy? *</option>
-                  <option>Quiero un software para mi Ferretería</option>
-                  <option>Mi negocio ya usa un software</option>
-                  <option>Soy Fabricante, Distribuidor o Importador</option>
+                  <option hidden disabled value="">¿Qué te trae por aquí hoy? *</option>
+                  <option value="SF">Quiero un software para mi Ferretería</option>
+                  <option value="TS">Mi negocio ya usa un software</option>
+                  <option value="SFDI">Soy Fabricante, Distribuidor o Importador</option>
                 </Select>
               </FormControl>
-              <Button size={{base:"lg", sm:"lg"}} onClick={()=> {}}  bg="white" borderColor="cyan.200" borderWidth={4} shadow="md"
-               _hover={{
-                        bg: "white"
-                      }}
+              <Button size={{base:"lg", sm:"lg"}} onClick={handleContinue}  bg="white" borderColor="cyan.200" borderWidth={4} shadow="md"
+               _hover={{ bg: "white" }}
               >
                 Continuar <Right/>
               </Button>
@@ -334,21 +383,32 @@ export default function Maintenance() {
             description="Más de 250 ferreteros como tú ya confían en nuestra tecnología. Desde el abastecimiento inteligente del inventario hasta la facturación electrónica, nos encargamos de todo para que puedas concentrarte en lo que mejor sabes hacer."
             bg="yellow.400"
             logo={logopuntoventa}
-            cta="Ir a Ferreteros.App PuntoVenta"
-            href="https://ferreteros.app"
-          />
+            // cta="Ir a Ferreteros.App PuntoVenta"
+            // href="https://ferreteros.app"
+          >
+            <Link onClick={onPVOpen} fontWeight={600} fontSize={'lg'}>
+              <Flex direction={'row'} align={'left'}>
+                Ir a Ferreteros.App PuntoVenta <Right/>
+              </Flex>
+            </Link>
+          </Product>
 
           <Product
             hero="PEDIDOS ILIMITADOS"
             name1="Reserva rápida de pedidos."
             name2="Para pedidos grandes."
-            description="Ya sea que estés buscando crear una tienda desde cero o quieras algo ya más preparado, comienza con un catálogo potente y fácil de usar y permite a tus clientes realizar un pedido fácilmente. Esta herramienta tiene opciones para cada negocio."
+            description="Ya sea que estés buscando crear una tienda desde cero o quieras algo ya más preparado, comienza con un catálogo potente y fácil de usar y permite a tus clientes realizar un pedido fácilmente. Esta herramienta está diseñada para fabricantes, distribuidores e importadores."
             bg="cyan.500"
             logo={logocatalogos}
-            cta="Ir a Ferreteros.App Catálogos"
-            href="https://catalogos.ferreteros.app"
-          />
-
+            // cta="Ir a Ferreteros.App Catálogos"
+            // href="https://catalogos.ferreteros.app"
+          >
+            <Link onClick={onIAOpen} fontWeight={600} fontSize={'lg'}>
+              <Flex direction={'row'} align={'left'}>
+                Ir a Ferreteros.App Catálogos <Right/>
+              </Flex>
+            </Link>
+          </Product>
           <Product
             hero="ASISTENTE TODOPODEROSO"
             name1="Respuestas Precisas."
@@ -356,9 +416,15 @@ export default function Maintenance() {
             description="Obtenga las respuestas precisas a sus preguntas de negocio más complejas en segundos. Nuestro Asistente Ferretero cuenta con tecnología de inteligencia artificial, es preciso, ágil, eficiente y está diseñado para ayudarle a maximizar el retorno de tus inversiones."
             bg="purple.300"
             logo={logoferreteroia}
-            cta="Ir a Ferreteros.App Ferretero.IA"
-            href="https://ferreteros.app"
-          />
+            // cta="Ir a Ferreteros.App Ferretero.IA"
+            // href="https://ferreteros.app"
+          >
+            <Link onClick={onPVOpen} fontWeight={600} fontSize={'lg'}>
+              <Flex direction={'row'} align={'left'}>
+                Ir a Ferreteros.App IA <Right/>
+              </Flex>
+            </Link>
+          </Product>
 
           <Product
             hero="COMPROBANTES ILIMITADOS"
@@ -367,9 +433,15 @@ export default function Maintenance() {
             description="Una solución todo en uno para cada rubro de la Industria. Nuestra plataforma se integra con otras aplicaciones de empresas e instituciones del Estado y está diseñada para ayudarte a ahorrar tiempo y dinero, y así puedas concentrarte en hacer crecer tu negocio."
             bg="red.400"
             logo={logofacturacion}
-            cta="Ir a Ferreteros.App Facturación"
-            href="https://ferreteros.app"
-          />
+            // cta="Ir a Ferreteros.App Facturación"
+            // href="https://ferreteros.app"
+          >
+            <Link onClick={onPVOpen} fontWeight={600} fontSize={'lg'}>
+              <Flex direction={'row'} align={'left'}>
+                Ir a Ferreteros.App FACTURACION <Right/>
+              </Flex>
+            </Link>
+          </Product>
 		    </Grid>
         <Particles
           id="tsparticles"
@@ -456,7 +528,90 @@ export default function Maintenance() {
           </Box>
         </Grid>
 
+        <Modal id="SOYFERRETERO" isCentered isOpen={isSFOpen} onClose={onSFClose}>
+          <ModalOverlay
+            bg='blackAlpha.300'
+            backdropFilter='blur(5px) hue-rotate(5deg)'
+          />
+          <ModalContent>
+            <ModalHeader>Modal Title SOY FERRETERO</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Text>Custom backdrop filters!</Text>
+            </ModalBody>
+            <ModalFooter>
+              <Button onClick={onSFClose}>Close</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
 
+        <Modal id="TENGOSOFTWARE" isCentered isOpen={isTSOpen} onClose={onTSClose}>
+          <ModalOverlay
+            bg='blackAlpha.300'
+            backdropFilter='blur(5px) hue-rotate(5deg)'
+          />
+          <ModalContent>
+            <ModalHeader>Modal Title TENGO SOFTWARE</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Text>Custom backdrop filters!</Text>
+            </ModalBody>
+            <ModalFooter>
+              <Button onClick={onTSClose}>Close</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+
+        <Modal id="SOYFDI" isCentered isOpen={isSFDIOpen} onClose={onSFDIClose}>
+          <ModalOverlay
+            bg='blackAlpha.300'
+            backdropFilter='blur(5px) hue-rotate(5deg)'
+          />
+          <ModalContent>
+            <ModalHeader>Modal Title SOY FDI</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Text>Custom backdrop filters!</Text>
+            </ModalBody>
+            <ModalFooter>
+              <Button onClick={onSFDIClose}>Close</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+
+        <Modal id="PUNTOVENTA" isCentered isOpen={isPVOpen} onClose={onPVClose}>
+          <ModalOverlay
+            bg='blackAlpha.300'
+            backdropFilter='blur(5px) hue-rotate(5deg)'
+          />
+          <ModalContent>
+            <ModalHeader>Modal Title FERRETERO IA</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Text>Custom backdrop filters!</Text>
+            </ModalBody>
+            <ModalFooter>
+              <Button onClick={onPVClose}>Close</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+
+        <Modal id="FERRETEROIA" isCentered isOpen={isIAOpen} onClose={onIAClose}>
+          <ModalOverlay
+            bg='blackAlpha.300'
+            backdropFilter='blur(5px) hue-rotate(5deg)'
+          />
+          <ModalContent>
+            <ModalHeader>Modal Title Punto Venta</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Text>Custom backdrop filters!</Text>
+            </ModalBody>
+            <ModalFooter>
+              <Button onClick={onIAClose}>Close</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </Container>
     </>
   )

@@ -14,7 +14,7 @@ import logoblack from "../../Images/ferreteros-app-black.png";
 
 import Right from "../Icons/Right"
 
-export default function Product({name1, name2, bg, logo, description, cta, hero, href}) {
+export default function Product({name1, name2, bg, logo, description, hero, children}) {
 	return (
 		<Center py={0}>
 	      <Box
@@ -76,11 +76,9 @@ export default function Product({name1, name2, bg, logo, description, cta, hero,
 	          <Text>
 	          	{description}
 	          </Text>
-	          <Link href={href} fontWeight={600} fontSize={'lg'}>
-		          <Flex direction={'row'} align={'left'}>
-		          	{cta} <Right/>
-		          </Flex>
-	          </Link>
+	          <Flex>
+	          	{children}
+	          </Flex>
 	        </Stack>
 	      </Box>
 	    </Center>
