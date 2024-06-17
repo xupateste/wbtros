@@ -186,7 +186,7 @@ export default function Maintenance() {
                 textAlign="center"
                 py={0}
               >
-              La Revolución en
+              Revolucionando
                 <br />
               <Text as={'span'} color={'cyan.400'}>
                   la Industria Ferretera
