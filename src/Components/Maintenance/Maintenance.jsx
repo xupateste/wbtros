@@ -598,8 +598,8 @@ export default function Maintenance() {
                       </Box>  
                     </Box>
                     <Heading>Tu Ferretería en su Máxima Rentabilidad</Heading>
-                    <Text color={'black'} fontSize={{base:"md", sm:'lg'}}>
-                      Automatiza tu ferretería desde el abastecimiento inteligente del inventario hasta la facturación electrónica. Funciona para todo tipo de ferretería, incluida la tuya.
+                    <Text color={'black'} fontSize={{base:"sm", sm:'lg'}}>
+                      Automatiza tu ferretería, desde el abastecimiento inteligente del inventario hasta la facturación electrónica. Funciona para todo tipo de ferretería, incluida la tuya.
                     </Text>
                   </Stack>
                   <Flex>
@@ -642,7 +642,7 @@ export default function Maintenance() {
             </ModalBody>
             <ModalFooter>
               <Center w="full">
-                <Button colorScheme='orange' size="lg" onClick={onSFClose}>Solicita Acceso Gratis</Button>
+                <Button colorScheme='orange' size="lg" onClick={onSFClose}>Solicita tu acceso Gratis <Right/></Button>
               </Center>
             </ModalFooter>
           </ModalContent>
@@ -673,7 +673,8 @@ export default function Maintenance() {
                         {"FERRETERIAS INTELIGENTES"}
                       </Text>
                     </Flex>
-                    <Heading>Deja atrás las limitaciones</Heading>
+                    {/*<Heading>Deja atrás las limitaciones</Heading>*/}
+                    <Heading>Creamos Superdueños de Ferreterías</Heading>
                     <Text color={'black'} fontSize={{base:"md", sm:'lg'}}>
                       Automatiza tu ferretería desde el abastecimiento inteligente del inventario hasta la facturación electrónica. Funciona para todo tipo de ferretería, incluida la tuya.
                     </Text>
