@@ -599,7 +599,7 @@ export default function Maintenance() {
                     </Box>
                     <Heading>Tu Ferretería en su Máxima Rentabilidad</Heading>
                     <Text color={'black'} fontSize={{base:"md", sm:'lg'}}>
-                      Lleva el control total de tu ferretería, desde la gestión inteligente del inventario hasta la facturación electrónica. Funciona para todo tipo de ferretería, incluida la tuya.
+                      Automatiza tu ferretería desde el abastecimiento inteligente del inventario hasta la facturación electrónica. Funciona para todo tipo de ferretería, incluida la tuya.
                     </Text>
                   </Stack>
                   <Flex>
@@ -648,19 +648,78 @@ export default function Maintenance() {
           </ModalContent>
         </Modal>
 
-        <Modal id="TENGOSOFTWARE" isCentered isOpen={isTSOpen} onClose={onTSClose}>
-          <ModalOverlay
+        <Modal id="TENGOSOFTWARE" scrollBehavior="inside" size="full" isCentered isOpen={isTSOpen} onClose={onTSClose}>
+          {/*<ModalOverlay
             bg='blackAlpha.300'
             backdropFilter='blur(5px) hue-rotate(5deg)'
-          />
-          <ModalContent>
-            <ModalHeader>Modal Title TENGO SOFTWARE</ModalHeader>
-            <ModalCloseButton />
+          />*/}
+          <ModalContent bg={'yellow.400'}>
+            {/*<ModalHeader>Modal Title SOY FERRETERO</ModalHeader>*/}
+            <ModalCloseButton size="lg" />
             <ModalBody>
-              <Text>Custom backdrop filters!</Text>
+              <Container maxW={'5xl'} pt={12}>
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+                  <Stack spacing={4}>
+                    <Flex>
+                      <Text
+                        bg="white"
+                        fontSize="xs"
+                        px={2}
+                        py={0}
+                        color={"yellow.400"}
+                        fontWeight={600}
+                        letterSpacing="1px"
+                      >
+                        {"FERRETERIAS INTELIGENTES"}
+                      </Text>
+                    </Flex>
+                    <Heading>Deja atrás las limitaciones</Heading>
+                    <Text color={'black'} fontSize={{base:"md", sm:'lg'}}>
+                      Automatiza tu ferretería desde el abastecimiento inteligente del inventario hasta la facturación electrónica. Funciona para todo tipo de ferretería, incluida la tuya.
+                    </Text>
+                  </Stack>
+                  <Flex>
+                      <Image
+                        rounded={'md'}
+                        boxShadow="dark-lg"
+                        alt={'feature image'}
+                        src={digital}
+                        objectFit={'cover'}
+                      />
+                  </Flex>
+                </SimpleGrid>
+                <Stack spacing={4} mt={8}>
+                  <Text fontSize="lg" fontWeight={600} color="black">
+                    Nuestro compromiso es acompañarte en todo el proceso
+                  </Text>
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'yellow.300'}
+                    color={'yellow.900'}
+                    text={'Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo para agendarte un acceso al software.'}
+                  />
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'yellow.300'}
+                    color={'yellow.900'}
+                    text={'Tendrás acceso a la solución que mejor se adapte a tu negocio.'}
+                  />
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'yellow.300'}
+                    color={'yellow.900'}
+                    text={'Toda la información necesaria para empezar a utilizar Ferreteros.app.'}
+                  />
+                </Stack>
+                <Text mt={8} fontSize="lg" fontWeight={600} color="black">
+                  Más de 250 ferreterías en todo el país confían en nosotros y seguimos creciendo.
+                </Text>
+              </Container>
             </ModalBody>
             <ModalFooter>
-              <Button onClick={onTSClose}>Close</Button>
+              <Center w="full">
+                <Button colorScheme='orange' size="lg" onClick={onTSClose}>Solicita Acceso Gratis</Button>
+              </Center>
             </ModalFooter>
           </ModalContent>
         </Modal>
