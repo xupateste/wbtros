@@ -193,7 +193,7 @@ export default function Maintenance() {
 
   const Feature = ({ text, icon, iconBg, color }) => {
     return (
-      <Stack direction={'row'} align={'center'} mb={3}>
+      <Stack direction={'row'} align={'center'}>
         <Flex w={8} h={8} align={'center'} justify={'center'} rounded={'full'} bg={iconBg} color={color}>
           {icon}
         </Flex>
@@ -254,14 +254,14 @@ export default function Maintenance() {
                 py={0}
                 letterSpacing="-1px" 
               >
-                Una Nueva Era <Text as={'span'} fontSize={{base:"3xl", md:"5xl"}}>para</Text>
+                Revolucionando
                 <br />
                 <Text as={'span'} color={'cyan.400'}>
-                  <Text as={'span'} fontSize={{base:"3xl", md:"5xl"}}>la</Text> Industria Ferretera
+                  La Industria Ferretera
                 </Text>
               </Heading>
-              <Center textAlign="center" fontSize={{base:"md", sm:"xl"}} color={'gray.500'} pt={{base:2, sm:8}}>
-                Empoderamos ferreteros con software que maximizan el retorno de sus inversiones
+              <Center textAlign="center" fontSize={{base:"sm", sm:"xl"}} color={'gray.500'} pt={{base:2, sm:2}}>
+                Pon tu Negocio Ferretero a su Máxima Rentabilidad
               </Center>
             </Stack>
           </Box>
@@ -557,8 +557,8 @@ export default function Maintenance() {
             {/*<ModalHeader>Modal Title SOY FERRETERO</ModalHeader>*/}
             <ModalCloseButton size="lg" />
             <ModalBody>
-              <Container maxW={'5xl'} py={12}>
-                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+              <Container maxW={'5xl'} pt={12}>
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
                   <Stack spacing={4}>
                     <Flex>
                       <Text
@@ -599,49 +599,50 @@ export default function Maintenance() {
                     </Box>
                     <Heading>Tu Ferretería en su Máxima Rentabilidad</Heading>
                     <Text color={'black'} fontSize={{base:"md", sm:'lg'}}>
-                     Software Ferretero todo en uno: desde abastecimiento inteligente de inventario hasta facturación electrónica. Ofrecemos tecnología personalizada para todo tipo de ferreterías, incluida la tuya.
+                      Lleva el control total de tu ferretería, desde la gestión inteligente del inventario hasta la facturación electrónica. Funciona para todo tipo de ferretería, incluida la tuya.
                     </Text>
-                    <Text fontSize="lg" fontWeight={600} color="black">
-                      Nuestro compromiso es acompañarte en todo el proceso
-                    </Text>
-                    <Stack
-                      spacing={2}
-                    >
-                      <Feature
-                        icon={<Icon as={Check}/>}
-                        iconBg={'yellow.300'}
-                        color={'yellow.900'}
-                        text={'Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo para agendarte un acceso al software.'}
-                      />
-                      <Feature
-                        icon={<Icon as={Check}/>}
-                        iconBg={'yellow.300'}
-                        color={'yellow.900'}
-                        text={'Acceso a la solución que mejor se adapte a tu negocio.'}
-                      />
-                      <Feature
-                        icon={<Icon as={Check}/>}
-                        iconBg={'yellow.300'}
-                        color={'yellow.900'}
-                        text={'Toda la información necesaria para empezar a utilizar Ferreteros.app.'}
-                      />
-                    </Stack>
                   </Stack>
                   <Flex>
-                    <Image
-                      rounded={'md'}
-                      boxShadow="dark-lg"
-                      alt={'feature image'}
-                      src={digital}
-                      objectFit={'cover'}
-                    />
+                      <Image
+                        rounded={'md'}
+                        boxShadow="dark-lg"
+                        alt={'feature image'}
+                        src={digital}
+                        objectFit={'cover'}
+                      />
                   </Flex>
                 </SimpleGrid>
+                <Stack spacing={4} mt={8}>
+                  <Text fontSize="lg" fontWeight={600} color="black">
+                    Nuestro compromiso es acompañarte en todo el proceso
+                  </Text>
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'yellow.300'}
+                    color={'yellow.900'}
+                    text={'Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo para agendarte un acceso al software.'}
+                  />
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'yellow.300'}
+                    color={'yellow.900'}
+                    text={'Tendrás acceso a la solución que mejor se adapte a tu negocio.'}
+                  />
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'yellow.300'}
+                    color={'yellow.900'}
+                    text={'Toda la información necesaria para empezar a utilizar Ferreteros.app.'}
+                  />
+                </Stack>
+                <Text mt={8} fontSize="lg" fontWeight={600} color="black">
+                  Más de 250 ferreterías en todo el país confían en nosotros y seguimos creciendo.
+                </Text>
               </Container>
             </ModalBody>
             <ModalFooter>
               <Center w="full">
-                <Button colorScheme='orange' size="lg" onClick={onSFClose}>Solicitar acceso, rellenar formulario</Button>
+                <Button colorScheme='orange' size="lg" onClick={onSFClose}>Solicita Acceso Gratis</Button>
               </Center>
             </ModalFooter>
           </ModalContent>
