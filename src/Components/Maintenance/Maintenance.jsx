@@ -33,10 +33,16 @@ import {
   ModalContent,
   ModalHeader,
   ModalFooter,
+  List,
+  ListItem,
   ModalBody,
+  StackDivider,
+  VStack,
+  SimpleGrid,
   ModalCloseButton,
   useDisclosure,
 } from '@chakra-ui/react'
+import digital from "../../Images/digital.jpeg";
 import logoblack from "../../Images/ferreteros-app-black.png";
 import logocatalogos from "../../Images/ferreteros-app-catalogos.png";
 import logofacturacion from "../../Images/ferreteros-app-facturacion.png";
@@ -45,6 +51,7 @@ import logopuntoventa from "../../Images/ferreteros-app-puntoventa.png";
 import Product from "./Product"
 import Vision from "./Vision"
 import Right from "../Icons/Right"
+import Check from "../Icons/Check"
 import Facebook from "../Icons/Facebook"
 import Youtube from "../Icons/Youtube"
 import LinkedIn from "../Icons/LinkedIn"
@@ -184,6 +191,18 @@ export default function Maintenance() {
   );
 
 
+  const Feature = ({ text, icon, iconBg, color }) => {
+    return (
+      <Stack direction={'row'} align={'center'} mb={3}>
+        <Flex w={8} h={8} align={'center'} justify={'center'} rounded={'full'} bg={iconBg} color={color}>
+          {icon}
+        </Flex>
+        <Text fontWeight={600} fontSize={{base:"sm", sm:"md"}}>{text}</Text>
+      </Stack>
+    )
+  }
+
+
   return (
     <> 
       <Container maxW={'5xl'}>
@@ -233,11 +252,12 @@ export default function Maintenance() {
                 lineHeight={'110%'}
                 textAlign="center"
                 py={0}
+                letterSpacing="-1px" 
               >
-              Revolucionando
+                Una Nueva Era <Text as={'span'} fontSize={{base:"3xl", md:"5xl"}}>para</Text>
                 <br />
-              <Text as={'span'} color={'cyan.400'}>
-                  la Industria Ferretera
+                <Text as={'span'} color={'cyan.400'}>
+                  <Text as={'span'} fontSize={{base:"3xl", md:"5xl"}}>la</Text> Industria Ferretera
                 </Text>
               </Heading>
               <Center textAlign="center" fontSize={{base:"md", sm:"xl"}} color={'gray.500'} pt={{base:2, sm:8}}>
@@ -284,7 +304,7 @@ export default function Maintenance() {
                   bg="cyan.500"
                   color="white"
                   isInvalid={!isSelected}
-                  onChange={(e) => {setOption(e.target.value);  e.target.blur()}}
+                  onChange={(e) => {setOption(e.target.value);  e.target.blur(); setSelected(true)}}
                   size={{base: "md", sm:"lg"}}
                   fontSize={{base:"sm", sm: "lg"}}
                   defaultValue=""
@@ -386,7 +406,7 @@ export default function Maintenance() {
             // cta="Ir a Ferreteros.App PuntoVenta"
             // href="https://ferreteros.app"
           >
-            <Link onClick={onPVOpen} fontWeight={600} fontSize={'lg'}>
+            <Link onClick={onSFOpen} fontWeight={600} fontSize={'lg'}>
               <Flex direction={'row'} align={'left'}>
                 Ir a Ferreteros.App PuntoVenta <Right/>
               </Flex>
@@ -528,19 +548,101 @@ export default function Maintenance() {
           </Box>
         </Grid>
 
-        <Modal id="SOYFERRETERO" isCentered isOpen={isSFOpen} onClose={onSFClose}>
-          <ModalOverlay
+        <Modal id="SOYFERRETERO" scrollBehavior="inside" size="full" isCentered isOpen={isSFOpen} onClose={onSFClose}>
+          {/*<ModalOverlay
             bg='blackAlpha.300'
             backdropFilter='blur(5px) hue-rotate(5deg)'
-          />
-          <ModalContent>
-            <ModalHeader>Modal Title SOY FERRETERO</ModalHeader>
-            <ModalCloseButton />
+          />*/}
+          <ModalContent bg={'yellow.400'}>
+            {/*<ModalHeader>Modal Title SOY FERRETERO</ModalHeader>*/}
+            <ModalCloseButton size="lg" />
             <ModalBody>
-              <Text>Custom backdrop filters!</Text>
+              <Container maxW={'5xl'} py={12}>
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+                  <Stack spacing={4}>
+                    <Flex>
+                      <Text
+                        bg="white"
+                        fontSize="xs"
+                        px={2}
+                        py={0}
+                        color={"yellow.400"}
+                        fontWeight={600}
+                        letterSpacing="1px"
+                      >
+                        {"FERRETERIAS INTELIGENTES"}
+                      </Text>
+                    </Flex>
+                    <Box
+                      rounded={'lg'}
+                      mt={-1}
+                      mr={18}
+                      width={{base:"110%", sm: "90%", lg:"75%"}}
+                      h={{base:"48px", sm:"38px", lg: "40px"}}
+                    >
+                      <Box
+                        // w={{base:"40%", sm:"25%"}}
+                        // src={logoblack}
+                        alt="logo"
+                        backgroundImage={`url(${logopuntoventa})`}
+                        backgroundPosition="center"
+                        backgroundRepeat="no-repeat"
+                        backgroundSize="cover"
+                        border="none"
+                        // flexShrink={1}
+                        w="100%"
+                        h="100%"
+                        // opacity={1}
+                        // transition="opacity 500ms ease-in"
+                      >
+                      </Box>  
+                    </Box>
+                    <Heading>Tu Ferretería en su Máxima Rentabilidad</Heading>
+                    <Text color={'black'} fontSize={{base:"md", sm:'lg'}}>
+                     Software Ferretero todo en uno: desde abastecimiento inteligente de inventario hasta facturación electrónica. Ofrecemos tecnología personalizada para todo tipo de ferreterías, incluida la tuya.
+                    </Text>
+                    <Text fontSize="lg" fontWeight={600} color="black">
+                      Nuestro compromiso es acompañarte en todo el proceso
+                    </Text>
+                    <Stack
+                      spacing={2}
+                    >
+                      <Feature
+                        icon={<Icon as={Check}/>}
+                        iconBg={'yellow.300'}
+                        color={'yellow.900'}
+                        text={'Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo para agendarte un acceso al software.'}
+                      />
+                      <Feature
+                        icon={<Icon as={Check}/>}
+                        iconBg={'yellow.300'}
+                        color={'yellow.900'}
+                        text={'Acceso a la solución que mejor se adapte a tu negocio.'}
+                      />
+                      <Feature
+                        icon={<Icon as={Check}/>}
+                        iconBg={'yellow.300'}
+                        color={'yellow.900'}
+                        text={'Toda la información necesaria para empezar a utilizar Ferreteros.app.'}
+                      />
+                    </Stack>
+                  </Stack>
+                  <Flex>
+                    <Image
+                      rounded={'md'}
+                      boxShadow="dark-lg"
+                      alt={'feature image'}
+                      src={digital}
+                      objectFit={'cover'}
+                    />
+                  </Flex>
+                </SimpleGrid>
+              </Container>
             </ModalBody>
             <ModalFooter>
-              <Button onClick={onSFClose}>Close</Button>
+              <Center w="full">
+                <Button colorScheme='orange' size="lg" onClick={onSFClose}>Solicitar acceso, rellenar formulario</Button>
+              </Center>
             </ModalFooter>
           </ModalContent>
         </Modal>
