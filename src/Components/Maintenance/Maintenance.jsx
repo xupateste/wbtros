@@ -43,6 +43,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import digital from "../../Images/digital.jpeg";
+import ferreteria from "../../Images/ferreteria.jpeg";
 import logoblack from "../../Images/ferreteros-app-black.png";
 import logocatalogos from "../../Images/ferreteros-app-catalogos.png";
 import logofacturacion from "../../Images/ferreteros-app-facturacion.png";
@@ -252,16 +253,16 @@ export default function Maintenance() {
                 lineHeight={'110%'}
                 textAlign="center"
                 py={0}
-                letterSpacing="-1px" 
+                letterSpacing={{base:"-2px", sm:"-1px"}} 
               >
-                Revolucionando
+                Tecnologías Cloud <span fontSize="2xl">para</span>
                 <br />
                 <Text as={'span'} color={'cyan.400'}>
-                  La Industria Ferretera
+                  <span fontSize="2xl">la</span> Industria Ferretera
                 </Text>
               </Heading>
               <Center textAlign="center" fontSize={{base:"sm", sm:"xl"}} color={'gray.500'} pt={{base:2, sm:2}}>
-                Pon tu Negocio Ferretero a su Máxima Rentabilidad
+                Pon tu negocio ferretero a su máxima rentabilidad
               </Center>
             </Stack>
           </Box>
@@ -326,7 +327,7 @@ export default function Maintenance() {
               <Button size={{base:"lg", sm:"lg"}} onClick={handleContinue}  bg="white" borderColor="cyan.200" borderWidth={4} shadow="md"
                _hover={{ bg: "white" }}
               >
-                Continuar <Right/>
+                Continuemos <Right/>
               </Button>
             </Grid>
           </Stack>
@@ -567,7 +568,7 @@ export default function Maintenance() {
                         px={2}
                         py={0}
                         color={"yellow.400"}
-                        fontWeight={600}
+                        fontWeight={700}
                         letterSpacing="1px"
                       >
                         {"FERRETERIAS INTELIGENTES"}
@@ -607,7 +608,7 @@ export default function Maintenance() {
                         rounded={'md'}
                         boxShadow="dark-lg"
                         alt={'feature image'}
-                        src={digital}
+                        src={ferreteria}
                         objectFit={'cover'}
                       />
                   </Flex>
@@ -642,7 +643,7 @@ export default function Maintenance() {
             </ModalBody>
             <ModalFooter>
               <Center w="full">
-                <Button colorScheme='orange' size="lg" onClick={onSFClose}>Solicita tu acceso Gratis <Right/></Button>
+                <Button colorScheme='orange' size="lg" onClick={onSFClose}>Comienza gratis <Right/></Button>
               </Center>
             </ModalFooter>
           </ModalContent>
@@ -653,7 +654,7 @@ export default function Maintenance() {
             bg='blackAlpha.300'
             backdropFilter='blur(5px) hue-rotate(5deg)'
           />*/}
-          <ModalContent bg={'yellow.400'}>
+          <ModalContent bg={'teal.200'}>
             {/*<ModalHeader>Modal Title SOY FERRETERO</ModalHeader>*/}
             <ModalCloseButton size="lg" />
             <ModalBody>
@@ -666,15 +667,90 @@ export default function Maintenance() {
                         fontSize="xs"
                         px={2}
                         py={0}
+                        color={"teal.400"}
+                        fontWeight={700}
+                        letterSpacing="1px"
+                      >
+                        {"FERRETEROS.APP"}
+                      </Text>
+                    </Flex>
+                    {/*<Heading>Deja atrás las limitaciones</Heading>*/}
+                    <Heading>Haz crecer tu negocio<br
+                    />No tu inventario</Heading>
+                    {/*<Heading>Supera las limitaciones de tu software actual con nuestra solución inteligente de gestión de inventario y reabastecimiento.</Heading>*/}
+                    <Text color={'black'} fontSize={{base:"sm", sm:'lg'}}>
+                      Supera las limitaciones de tu software actual. Únete a nuestra red de ferreterías y <b>optimiza tu inventario con inteligencia artificial</b> para aumentar drásticamente tus ingresos y ganancias.
+                    </Text>
+                  </Stack>
+                  <Flex>
+                      <Image
+                        rounded={'md'}
+                        boxShadow="dark-lg"
+                        alt={'feature image'}
+                        src={digital}
+                        objectFit={'cover'}
+                      />
+                  </Flex>
+                </SimpleGrid>
+                <Stack spacing={4} mt={8}>
+                  <Text fontSize="lg" fontWeight={600} color="black">
+                    Nuestro compromiso es acompañarte en todo el proceso
+                  </Text>
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'teal.300'}
+                    color={'teal.900'}
+                    text={'Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo para agendarte un acceso al software.'}
+                  />
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'teal.300'}
+                    color={'teal.900'}
+                    text={'Tendrás acceso a la solución que mejor se adapte a tu negocio.'}
+                  />
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'teal.300'}
+                    color={'teal.900'}
+                    text={'Toda la información necesaria para empezar a utilizar Ferreteros.app.'}
+                  />
+                </Stack>
+                <Text mt={8} fontSize="lg" fontWeight={600} color="black">
+                  Más de 250 ferreterías en todo el país confían en nosotros y seguimos creciendo.
+                </Text>
+              </Container>
+            </ModalBody>
+            <ModalFooter>
+              <Center w="full">
+                <Button colorScheme='blue' size="lg" onClick={onTSClose}>Comienza gratis <Right/></Button>
+              </Center>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+
+         <Modal id="SOYFDI" scrollBehavior="inside" size="full" isCentered isOpen={isSFDIOpen} onClose={onSFDIClose}>
+          <ModalContent bg={'blue.400'}>
+            <ModalCloseButton size="lg" />
+            <ModalBody>
+              <Container maxW={'5xl'} pt={12}>
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+                  <Stack spacing={4}>
+                    <Flex>
+                      <Text
+                        bg="white"
+                        fontSize="xs"
+                        px={2}
+                        py={0}
                         color={"yellow.400"}
-                        fontWeight={600}
+                        fontWeight={700}
                         letterSpacing="1px"
                       >
                         {"FERRETERIAS INTELIGENTES"}
                       </Text>
                     </Flex>
                     {/*<Heading>Deja atrás las limitaciones</Heading>*/}
-                    <Heading>Creamos Superdueños de Ferreterías</Heading>
+                    <Heading>Deja atrás las tareas repetitivas</Heading>
+                    {/*<Heading>Creamos Superdueños de Ferreterías</Heading>*/}
                     <Text color={'black'} fontSize={{base:"md", sm:'lg'}}>
                       Automatiza tu ferretería desde el abastecimiento inteligente del inventario hasta la facturación electrónica. Funciona para todo tipo de ferretería, incluida la tuya.
                     </Text>
@@ -719,25 +795,8 @@ export default function Maintenance() {
             </ModalBody>
             <ModalFooter>
               <Center w="full">
-                <Button colorScheme='orange' size="lg" onClick={onTSClose}>Solicita Acceso Gratis</Button>
+                <Button colorScheme='orange' size="lg" onClick={onSFDIClose}>Solicita Acceso Gratis</Button>
               </Center>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-
-        <Modal id="SOYFDI" isCentered isOpen={isSFDIOpen} onClose={onSFDIClose}>
-          <ModalOverlay
-            bg='blackAlpha.300'
-            backdropFilter='blur(5px) hue-rotate(5deg)'
-          />
-          <ModalContent>
-            <ModalHeader>Modal Title SOY FDI</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <Text>Custom backdrop filters!</Text>
-            </ModalBody>
-            <ModalFooter>
-              <Button onClick={onSFDIClose}>Close</Button>
             </ModalFooter>
           </ModalContent>
         </Modal>
