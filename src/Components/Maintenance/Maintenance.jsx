@@ -643,7 +643,7 @@ export default function Maintenance() {
             </ModalBody>
             <ModalFooter>
               <Center w="full">
-                <Button colorScheme='orange' size="lg" onClick={onSFClose}>Comienza gratis <Right/></Button>
+                <Button colorScheme='orange' size="lg" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScmF_NGZe8qFUTg0Qw_Fp1W6kUWK2OGBkpinc55R1GUgccsJA/viewform')}>Comienza gratis <Right/></Button>
               </Center>
             </ModalFooter>
           </ModalContent>
