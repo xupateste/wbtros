@@ -42,9 +42,11 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from '@chakra-ui/react'
+import ferreterosapp from "../../Images/ferreteros-app-bg.png";
 import digital from "../../Images/digital.jpeg";
 import ferreteria from "../../Images/ferreteria.jpeg";
 import logoblack from "../../Images/ferreteros-app-black.png";
+import logowhite from "../../Images/ferreteros-app-white.png";
 import logocatalogos from "../../Images/ferreteros-app-catalogos.png";
 import logofacturacion from "../../Images/ferreteros-app-facturacion.png";
 import logoferreteroia from "../../Images/ferreteros-app-ferreteroia.png";
@@ -679,7 +681,7 @@ export default function Maintenance() {
                     />No tu inventario</Heading>
                     {/*<Heading>Supera las limitaciones de tu software actual con nuestra solución inteligente de gestión de inventario y reabastecimiento.</Heading>*/}
                     <Text color={'black'} fontSize={{base:"sm", sm:'lg'}}>
-                      Supera las limitaciones de tu software actual. Únete a nuestra red de ferreterías y <b>optimiza tu inventario con inteligencia artificial</b> para aumentar drásticamente tus ingresos y ganancias.
+                      Supera las limitaciones de tu software actual. Únete a nuestra red de ferreterías y optimiza tu inventario inteligentemente con nuestra solución para maximizar tus ingresos y ganancias.
                     </Text>
                   </Stack>
                   <Flex>
@@ -729,30 +731,55 @@ export default function Maintenance() {
         </Modal>
 
          <Modal id="SOYFDI" scrollBehavior="inside" size="full" isCentered isOpen={isSFDIOpen} onClose={onSFDIClose}>
-          <ModalContent bg={'blue.400'}>
+          <ModalContent bg={'blue.500'}>
             <ModalCloseButton size="lg" />
             <ModalBody>
               <Container maxW={'5xl'} pt={12}>
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
                   <Stack spacing={4}>
-                    <Flex>
+                    {/*
+                      <Flex>
                       <Text
                         bg="white"
                         fontSize="xs"
                         px={2}
                         py={0}
-                        color={"yellow.400"}
+                        color={"blue.400"}
                         fontWeight={700}
                         letterSpacing="1px"
                       >
                         {"FERRETERIAS INTELIGENTES"}
                       </Text>
-                    </Flex>
+                    </Flex>*/}
                     {/*<Heading>Deja atrás las limitaciones</Heading>*/}
-                    <Heading>Deja atrás las tareas repetitivas</Heading>
+                    <Heading>Conoce nuestra plataforma</Heading>
+                    <Box
+                      rounded={'lg'}
+                      mt={-1}
+                      mr={18}
+                      width={{base:"90%", sm: "80%", lg:"75%"}}
+                      h={{base:"49px", sm:"53px", lg: "60px"}}
+                    >
+                      <Box
+                        // w={{base:"40%", sm:"25%"}}
+                        // src={logoblack}
+                        alt="logo"
+                        backgroundImage={`url(${logowhite})`}
+                        backgroundPosition="center"
+                        backgroundRepeat="no-repeat"
+                        backgroundSize="cover"
+                        border="none"
+                        // flexShrink={1}
+                        w="100%"
+                        h="100%"
+                        // opacity={1}
+                        // transition="opacity 500ms ease-in"
+                      >
+                      </Box>  
+                    </Box>
                     {/*<Heading>Creamos Superdueños de Ferreterías</Heading>*/}
                     <Text color={'black'} fontSize={{base:"md", sm:'lg'}}>
-                      Automatiza tu ferretería desde el abastecimiento inteligente del inventario hasta la facturación electrónica. Funciona para todo tipo de ferretería, incluida la tuya.
+                      En un mercado global y digital en constante evolución, transformamos la manera de comerciar conectando marcas con el canal tradicional para impulsar el crecimiento de tu marca. ¿Qué es Ferreteros.app? Es una aplicación que elimina las barreras entre ferreteros, proveedores y compradores, potenciando las ventas tanto en sell in como en sell out, ofreciendo visibilidad y transparencia en la ejecución en el punto de venta. ¿Cómo lo logramos? Mediante la digitalización de la comunicación, planes de crecimiento, promociones y la obtención de insights relevantes. En última instancia, todos buscamos el mismo objetivo: resultados tangibles a corto plazo.
                     </Text>
                   </Stack>
                   <Flex>
@@ -760,7 +787,7 @@ export default function Maintenance() {
                         rounded={'md'}
                         boxShadow="dark-lg"
                         alt={'feature image'}
-                        src={digital}
+                        src={ferreterosapp}
                         objectFit={'cover'}
                       />
                   </Flex>
@@ -771,20 +798,14 @@ export default function Maintenance() {
                   </Text>
                   <Feature
                     icon={<Icon as={Check}/>}
-                    iconBg={'yellow.300'}
-                    color={'yellow.900'}
-                    text={'Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo para agendarte un acceso al software.'}
+                    iconBg={'blue.300'}
+                    color={'blue.900'}
+                    text={'Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo para agendarte una presentación.'}
                   />
                   <Feature
                     icon={<Icon as={Check}/>}
-                    iconBg={'yellow.300'}
-                    color={'yellow.900'}
-                    text={'Tendrás acceso a la solución que mejor se adapte a tu negocio.'}
-                  />
-                  <Feature
-                    icon={<Icon as={Check}/>}
-                    iconBg={'yellow.300'}
-                    color={'yellow.900'}
+                    iconBg={'blue.300'}
+                    color={'blue.900'}
                     text={'Toda la información necesaria para empezar a utilizar Ferreteros.app.'}
                   />
                 </Stack>
@@ -795,7 +816,7 @@ export default function Maintenance() {
             </ModalBody>
             <ModalFooter>
               <Center w="full">
-                <Button colorScheme='orange' size="lg" onClick={onSFDIClose}>Solicita Acceso Gratis</Button>
+                <Button colorScheme='red' size="lg" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeRPD4o4Tqyzeaqv1ub44f4tjlyv-mn_Q_7aaSXY1uD0ad6XQ/viewform')}>Rellenar formulario <Right/></Button>
               </Center>
             </ModalFooter>
           </ModalContent>
