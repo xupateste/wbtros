@@ -779,7 +779,7 @@ export default function Maintenance() {
                     </Box>
                     {/*<Heading>Creamos Superdueños de Ferreterías</Heading>*/}
                     <Text color={'black'} fontSize={{base:"md", sm:'lg'}}>
-                      En un mercado global y digital en constante evolución, transformamos la manera de comerciar conectando marcas con el canal tradicional para impulsar el crecimiento de tu marca. ¿Qué es Ferreteros.app? Es una aplicación que elimina las barreras entre ferreteros, proveedores y compradores, potenciando las ventas tanto en sell in como en sell out, ofreciendo visibilidad y transparencia en la ejecución en el punto de venta. ¿Cómo lo logramos? Mediante la digitalización de la comunicación, planes de crecimiento, promociones y la obtención de insights relevantes. En última instancia, todos buscamos el mismo objetivo: resultados tangibles a corto plazo.
+                      En un mercado global y digital en constante evolución, transformamos la manera de comerciar conectando marcas con el canal tradicional para impulsar el crecimiento de tu marca.<br/><br/><b>¿Qué es Ferreteros.app?</b><br/>Es una aplicación que elimina las barreras entre ferreteros, proveedores y compradores, potenciando las ventas tanto en sell in como en sell out, ofreciendo visibilidad y transparencia en la ejecución en el punto de venta.<br/><br/><b>¿Cómo lo logramos?</b><br/>Mediante la digitalización de la comunicación, planes de crecimiento, promociones y la obtención de insights relevantes. En última instancia, todos buscamos el mismo objetivo: resultados tangibles a corto plazo.
                     </Text>
                   </Stack>
                   <Flex>
