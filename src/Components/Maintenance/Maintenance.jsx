@@ -93,6 +93,7 @@ export default function Maintenance() {
 
   // const { isOpen, onOpen, onClose } = useDisclosure()
   const { isOpen: isPVOpen , onOpen: onPVOpen, onClose: onPVClose } = useDisclosure()
+  const { isOpen: isCTOpen , onOpen: onCTOpen, onClose: onCTClose } = useDisclosure()
   const { isOpen: isIAOpen , onOpen: onIAOpen, onClose: onIAClose } = useDisclosure()
   // const { isOpen: isDeleteOpen , onOpen: onDeleteOpen, onClose: onDeleteClose } = useDisclosure()
 
@@ -426,7 +427,7 @@ export default function Maintenance() {
             // cta="Ir a Ferreteros.App Catálogos"
             // href="https://catalogos.ferreteros.app"
           >
-            <Link onClick={onIAOpen} fontWeight={600} fontSize={'lg'}>
+            <Link onClick={onCTOpen} fontWeight={600} fontSize={'lg'}>
               <Flex direction={'row'} align={'left'}>
                 Ir a Ferreteros.App Catálogos <Right/>
               </Flex>
@@ -731,7 +732,7 @@ export default function Maintenance() {
         </Modal>
 
          <Modal id="SOYFDI" scrollBehavior="inside" size="full" isCentered isOpen={isSFDIOpen} onClose={onSFDIClose}>
-          <ModalContent bg={'blue.500'}>
+          <ModalContent bg={'cyan.400'}>
             <ModalCloseButton size="lg" />
             <ModalBody>
               <Container maxW={'5xl'} pt={12}>
@@ -744,7 +745,7 @@ export default function Maintenance() {
                         fontSize="xs"
                         px={2}
                         py={0}
-                        color={"blue.400"}
+                        color={"cyan.400"}
                         fontWeight={700}
                         letterSpacing="1px"
                       >
@@ -752,7 +753,7 @@ export default function Maintenance() {
                       </Text>
                     </Flex>*/}
                     {/*<Heading>Deja atrás las limitaciones</Heading>*/}
-                    <Heading>Conoce nuestra plataforma</Heading>
+                    <Heading>Conecta. Promociona. Vende.</Heading>
                     <Box
                       rounded={'lg'}
                       mt={-1}
@@ -798,14 +799,14 @@ export default function Maintenance() {
                   </Text>
                   <Feature
                     icon={<Icon as={Check}/>}
-                    iconBg={'blue.300'}
-                    color={'blue.900'}
+                    iconBg={'cyan.300'}
+                    color={'cyan.900'}
                     text={'Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo para agendarte una presentación.'}
                   />
                   <Feature
                     icon={<Icon as={Check}/>}
-                    iconBg={'blue.300'}
-                    color={'blue.900'}
+                    iconBg={'cyan.300'}
+                    color={'cyan.900'}
                     text={'Toda la información necesaria para empezar a utilizar Ferreteros.app.'}
                   />
                 </Stack>
@@ -822,19 +823,97 @@ export default function Maintenance() {
           </ModalContent>
         </Modal>
 
-        <Modal id="PUNTOVENTA" isCentered isOpen={isPVOpen} onClose={onPVClose}>
-          <ModalOverlay
-            bg='blackAlpha.300'
-            backdropFilter='blur(5px) hue-rotate(5deg)'
-          />
-          <ModalContent>
-            <ModalHeader>Modal Title FERRETERO IA</ModalHeader>
-            <ModalCloseButton />
+        <Modal id="CATALOGOS" scrollBehavior="inside" size="full" isCentered isOpen={isCTOpen} onClose={onCTClose}>
+          <ModalContent bg={'cyan.400'}>
+            <ModalCloseButton size="lg" />
             <ModalBody>
-              <Text>Custom backdrop filters!</Text>
+              <Container maxW={'5xl'} pt={12}>
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+                  <Stack spacing={4}>
+                    <Flex>
+                      <Text
+                        bg="white"
+                        fontSize="xs"
+                        px={2}
+                        py={0}
+                        color={"cyan.400"}
+                        fontWeight={700}
+                        letterSpacing="1px"
+                      >
+                        {"PEDIDOS ILIMITADOS"}
+                      </Text>
+                    </Flex>
+                    <Box
+                      rounded={'lg'}
+                      mt={-1}
+                      mr={18}
+                      width={{base:"110%", sm: "90%", lg:"75%"}}
+                      h={{base:"48px", sm:"38px", lg: "40px"}}
+                    >
+                      <Box
+                        // w={{base:"40%", sm:"25%"}}
+                        // src={logoblack}
+                        alt="logo"
+                        backgroundImage={`url(${logocatalogos})`}
+                        backgroundPosition="center"
+                        backgroundRepeat="no-repeat"
+                        backgroundSize="cover"
+                        border="none"
+                        // flexShrink={1}
+                        w="100%"
+                        h="100%"
+                        // opacity={1}
+                        // transition="opacity 500ms ease-in"
+                      >
+                      </Box>  
+                    </Box>
+                    <Heading>Tu Ferretería en su Máxima Rentabilidad</Heading>
+                    <Text color={'black'} fontSize={{base:"sm", sm:'lg'}}>
+                      Automatiza tu ferretería, desde el abastecimiento inteligente del inventario hasta la facturación electrónica. Funciona para todo tipo de ferretería, incluida la tuya.
+                    </Text>
+                  </Stack>
+                  <Flex>
+                      <Image
+                        rounded={'md'}
+                        boxShadow="dark-lg"
+                        alt={'feature image'}
+                        src={ferreteria}
+                        objectFit={'cover'}
+                      />
+                  </Flex>
+                </SimpleGrid>
+                <Stack spacing={4} mt={8}>
+                  <Text fontSize="lg" fontWeight={600} color="black">
+                    Nuestro compromiso es acompañarte en todo el proceso
+                  </Text>
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'cyan.300'}
+                    color={'cyan.900'}
+                    text={'Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo para agendarte un acceso al software.'}
+                  />
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'cyan.300'}
+                    color={'cyan.900'}
+                    text={'Tendrás acceso a la solución que mejor se adapte a tu negocio.'}
+                  />
+                  <Feature
+                    icon={<Icon as={Check}/>}
+                    iconBg={'cyan.300'}
+                    color={'cyan.900'}
+                    text={'Toda la información necesaria para empezar a utilizar Ferreteros.app.'}
+                  />
+                </Stack>
+                <Text mt={8} fontSize="lg" fontWeight={600} color="black">
+                  Más de 250 ferreterías en todo el país confían en nosotros y seguimos creciendo.
+                </Text>
+              </Container>
             </ModalBody>
             <ModalFooter>
-              <Button onClick={onPVClose}>Close</Button>
+              <Center w="full">
+                <Button colorScheme='orange' size="lg" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScmF_NGZe8qFUTg0Qw_Fp1W6kUWK2OGBkpinc55R1GUgccsJA/viewform')}>Comienza gratis <Right/></Button>
+              </Center>
             </ModalFooter>
           </ModalContent>
         </Modal>
