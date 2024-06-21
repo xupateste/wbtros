@@ -5,6 +5,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
+import TypeWriter from './TypeWriter';
 
 // import Head from 'next/head'
 import {
@@ -48,8 +49,10 @@ import ferreteria from "../../Images/ferreteria.jpeg";
 import logoblack from "../../Images/ferreteros-app-black.png";
 import logowhite from "../../Images/ferreteros-app-white.png";
 import logocatalogos from "../../Images/ferreteros-app-catalogos.png";
+import logocatalogosblack from "../../Images/ferreteros-app-catalogos-black.png";
 import logofacturacion from "../../Images/ferreteros-app-facturacion.png";
 import logoferreteroia from "../../Images/ferreteros-app-ferreteroia.png";
+import hero from "../../Images/hero.jpg";
 import logopuntoventa from "../../Images/ferreteros-app-puntoventa.png";
 import Product from "./Product"
 import Vision from "./Vision"
@@ -473,6 +476,57 @@ export default function Maintenance() {
           options={options}
         />
 
+        <Grid templateColumns={{sm:'repeat(1, 1fr)', base: 'repeat(1, 1fr)'}} pt={10} mb={4}>
+          <Box
+            role={'group'}
+            // p={6}
+            // maxW={'330px'}
+            // w={'full'}
+            // boxShadow={'2xl'}
+            rounded={'lg'}
+            pos={'relative'}
+            zIndex={1}>
+            <Stack
+            >
+              <Text color={'cyan.400'} letterSpacing="1px" fontSize={{ base: 'md', sm: 'lg'}} fontWeight={700}>
+                🏳️ Contáctanos
+              </Text>
+              <Heading
+                fontWeight={700}
+                fontSize={{ base: '2xl', sm: '4xl'}}
+                lineHeight={'110%'}
+                textAlign="left"
+                py={0}
+              >
+                  Innovemos Juntos
+              </Heading>
+            </Stack>
+          </Box>
+        </Grid>
+        <Stack
+          // role={'group'}
+          p={6}
+          // maxW={'330px'}
+          // w={'full'}
+          bg="blue.300"
+          boxShadow={'2xl'}
+          fontSize={'2xl'}
+          rounded={'xl'}
+          pos={'relative'}
+          zIndex={1}
+          // width="100%"
+          direction="column"
+         >
+          <Text textAlign="center">
+            Si estás preparado para elevar tus procesos con herramientas significativamente mejoradas, estamos entusiasmados por colaborar contigo.            
+          </Text>
+          <Center>
+            <Button colorScheme='blue' size="lg" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSc_cyagdd1l8oWe2Q4e2bwo-5Xo6RW9M66-atmY17Q1-dNyCw/viewform')}>
+              Contactar <Right/>
+            </Button>
+          </Center>
+        </Stack>
+
         <Grid templateColumns={{sm:'repeat(1, 1fr)', base: 'repeat(1, 1fr)'}} mt={10}>
           <Box
             // bg={useColorModeValue('gray.50', 'gray.900')}
@@ -678,11 +732,12 @@ export default function Maintenance() {
                       </Text>
                     </Flex>
                     {/*<Heading>Deja atrás las limitaciones</Heading>*/}
-                    <Heading>Haz crecer tu negocio<br
-                    />No tu inventario</Heading>
+                    <Heading>Controla tu inventario<br
+                    />Potencia tus ganancias</Heading>
                     {/*<Heading>Supera las limitaciones de tu software actual con nuestra solución inteligente de gestión de inventario y reabastecimiento.</Heading>*/}
                     <Text color={'black'} fontSize={{base:"sm", sm:'lg'}}>
-                      Supera las limitaciones de tu software actual. Únete a nuestra red de ferreterías y optimiza tu inventario inteligentemente con nuestra solución para maximizar tus ingresos y ganancias.
+                      {/*Supera las limitaciones de tu software actual. Únete a nuestra red de ferreterías y optimiza tu inventario inteligentemente con nuestra solución para maximizar tus ingresos y ganancias.*/}
+                      Descubre una nueva era en la gestión ferretera. Nuestra solución apoyada en inteligencia artificial transforma cómo tomas decisiones, maximizando eficiencia y resultados.
                     </Text>
                   </Stack>
                   <Flex>
@@ -824,11 +879,11 @@ export default function Maintenance() {
         </Modal>
 
         <Modal id="CATALOGOS" scrollBehavior="inside" size="full" isCentered isOpen={isCTOpen} onClose={onCTClose}>
-          <ModalContent bg={'cyan.400'}>
+          <ModalContent bg={'white'}>
             <ModalCloseButton size="lg" />
             <ModalBody>
               <Container maxW={'5xl'} pt={12}>
-                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+                {/*<SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
                   <Stack spacing={4}>
                     <Flex>
                       <Text
@@ -848,7 +903,7 @@ export default function Maintenance() {
                       mt={-1}
                       mr={18}
                       width={{base:"110%", sm: "90%", lg:"75%"}}
-                      h={{base:"48px", sm:"38px", lg: "40px"}}
+                      h={{base:"50px", sm:"45px", lg: "55px"}}
                     >
                       <Box
                         // w={{base:"40%", sm:"25%"}}
@@ -881,28 +936,108 @@ export default function Maintenance() {
                         objectFit={'cover'}
                       />
                   </Flex>
+                </SimpleGrid>*/}
+                <SimpleGrid 
+                  columns={{ base: 1, md: 2, lg: 2 }}
+                  spacing={{ base: 4, md: 4 }}
+                  py={{ base: 0, md: 35 }}
+                >
+                  <Stack flex={1} spacing={{ base: 5, md: 3 }}>
+                    <Box
+                      rounded={'lg'}
+                      mt={-1}
+                      mr={18}
+                      width={{base:"110%", sm: "90%", lg:"75%"}}
+                      h={{base:"50px", sm:"45px", lg: "55px"}}
+                    >
+                      <Box
+                        // w={{base:"40%", sm:"25%"}}
+                        // src={logoblack}
+                        alt="logo"
+                        backgroundImage={`url(${logocatalogosblack})`}
+                        backgroundPosition="center"
+                        backgroundRepeat="no-repeat"
+                        backgroundSize="cover"
+                        border="none"
+                        // flexShrink={1}
+                        w="100%"
+                        h="100%"
+                        // opacity={1}
+                        // transition="opacity 500ms ease-in"
+                      >
+                      </Box>  
+                    </Box>
+                    <Heading
+                      lineHeight={1.2}
+                      fontWeight={600}
+                      // pt={8}
+                      fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
+                      <Text as={'span'} position={'relative'} fontSize={{base: 'md', sm: 'md', lg: 'lg'}} color={'cyan.500'}>
+                        CREA CATÁLOGOS
+                      </Text>
+                      <Text as={'span'} position={'relative'} fontSize={{base: 'lg', sm: 'lg', lg: '2xl'}} textTransform="lowercase" letterSpacing={'1px'} px={1} ml={2} color={'white'} bg="cyan.500">
+                        gratis
+                      </Text>
+                      <br />
+                      <Text
+                        as={'span'}
+                        pt={10}
+                        position={'relative'} fontWeight={800}>
+                        Para tu 
+                      </Text>
+                      <Box
+                          // ml={{ base: 2, sm: 2, lg: 3 }}
+                          display='block'
+                          fontWeight={800}
+                          _after={{
+                            content: `"|"`,
+                            textDecoration: "blink",
+                          }}>
+                          <TypeWriter
+                            typingDelay={20}
+                            erasingDelay={60}
+                            newTextDelay={1200}
+                            textArray={["Ferretería", "Distribuidora", "Importadora"]}
+                            loop={true}
+                          />
+                        </Box>
+                      <Text as={'span'} color={'cyan.500'} fontWeight={500} fontSize={"3xl"}>
+                        y recibe pedidos online
+                      </Text>
+                    </Heading>
+                    <Text color={'gray.500'} fontSize={{base:'md', sm:'md', lg:'xl'}}>
+                      Potencia tu negocio a nivel nacional y simplifica todas tus ventas.
+                    </Text>
+                  </Stack>
+                  <Stack
+                    flex={1}
+                    mt={4}
+                    justify={'center'}
+                    position={'relative'}
+                    w={'full'}>
+                    <Box
+                      position={'relative'}
+                      overflow={'hidden'}>
+                      <Image
+                        w={'100%'}
+                        h={'100%'}
+                        src={hero}
+                      />
+                    </Box>
+                  </Stack>
                 </SimpleGrid>
-                <Stack spacing={4} mt={8}>
-                  <Text fontSize="lg" fontWeight={600} color="black">
-                    Nuestro compromiso es acompañarte en todo el proceso
-                  </Text>
+                <Stack spacing={4}>
                   <Feature
                     icon={<Icon as={Check}/>}
                     iconBg={'cyan.300'}
                     color={'cyan.900'}
-                    text={'Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo para agendarte un acceso al software.'}
+                    text={'Ingresa a la pagina principal de la App Catálogos.'}
                   />
                   <Feature
                     icon={<Icon as={Check}/>}
                     iconBg={'cyan.300'}
                     color={'cyan.900'}
-                    text={'Tendrás acceso a la solución que mejor se adapte a tu negocio.'}
-                  />
-                  <Feature
-                    icon={<Icon as={Check}/>}
-                    iconBg={'cyan.300'}
-                    color={'cyan.900'}
-                    text={'Toda la información necesaria para empezar a utilizar Ferreteros.app.'}
+                    text={'Crea tu catálogo digital gratis y empieza a recibir pedidos'}
                   />
                 </Stack>
                 <Text mt={8} fontSize="lg" fontWeight={600} color="black">
@@ -912,7 +1047,7 @@ export default function Maintenance() {
             </ModalBody>
             <ModalFooter>
               <Center w="full">
-                <Button colorScheme='orange' size="lg" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScmF_NGZe8qFUTg0Qw_Fp1W6kUWK2OGBkpinc55R1GUgccsJA/viewform')}>Comienza gratis <Right/></Button>
+                <Button colorScheme='cyan' size="lg" onClick={() => window.open('https://catalogos.ferreteros.app')}>Ir a App Catálogos<Right/></Button>
               </Center>
             </ModalFooter>
           </ModalContent>
