@@ -22,7 +22,8 @@ export default function Product({name1, name2, bg, logo, description, hero, chil
 	        p={6}
 	        // maxW={'330px'}
 	        // w={'full'}
-	        bg={bg}
+	        // bg={bg}
+	        bgGradient={bg}
 	        boxShadow={'2xl'}
 	        rounded={'lg'}
 	        pos={'relative'}

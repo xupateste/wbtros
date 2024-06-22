@@ -281,7 +281,8 @@ export default function Maintenance() {
             pb={{base:5 ,sm:6}}
             // maxW={'330px'}
             // w={'full'}
-            bg={"cyan.400"}
+            // bg={"cyan.400"}
+            bgGradient="linear(cyan.400 0%, cyan.300 90%)"
             boxShadow={'2xl'}
             rounded={'3xl'}
             pos={'relative'}
@@ -343,7 +344,7 @@ export default function Maintenance() {
         <br/>
         <br/>
 
-        <Grid templateColumns={{sm:'repeat(1, 1fr)', base: 'repeat(1, 1fr)'}}>
+        {/*<Grid templateColumns={{sm:'repeat(1, 1fr)', base: 'repeat(1, 1fr)'}}>
           <Box
             role={'group'}
             // p={6}
@@ -370,10 +371,9 @@ export default function Maintenance() {
             </Stack>
           </Box>
         </Grid>
-        <Vision/>
+        <Vision/>*/}
 
-        <br/>
-        <br/>
+        {/*<br/>*/}
 
         <Grid templateColumns={{sm:'repeat(1, 1fr)', base: 'repeat(1, 1fr)'}}>
           <Box
@@ -408,7 +408,8 @@ export default function Maintenance() {
             name1="Desarrollado para Ferreteros."
             name2="Desarrollado para ti."
             description="Más de 250 ferreteros como tú ya confían en nuestra tecnología. Desde el abastecimiento inteligente del inventario hasta la facturación electrónica, nos encargamos de todo para que puedas concentrarte en lo que mejor sabes hacer."
-            bg="yellow.400"
+            // bg="yellow.400"
+            bg="linear(yellow.400 0%, yellow.200 90%)"
             logo={logopuntoventa}
             // cta="Ir a Ferreteros.App PuntoVenta"
             // href="https://ferreteros.app"
@@ -425,7 +426,8 @@ export default function Maintenance() {
             name1="Reserva rápida de pedidos."
             name2="Para pedidos grandes."
             description="Ya sea que estés buscando crear una tienda desde cero o quieras algo ya más preparado, comienza con un catálogo potente y fácil de usar y permite a tus clientes realizar un pedido fácilmente. Esta herramienta está diseñada para fabricantes, distribuidores e importadores."
-            bg="cyan.500"
+            // bg="cyan.500"
+            bg="linear(cyan.400 0%, cyan.200 90%)"
             logo={logocatalogos}
             // cta="Ir a Ferreteros.App Catálogos"
             // href="https://catalogos.ferreteros.app"
@@ -441,7 +443,8 @@ export default function Maintenance() {
             name1="Respuestas Precisas."
             name2="Decisiones Confiables."
             description="Obtenga las respuestas precisas a sus preguntas de negocio más complejas en segundos. Nuestro Asistente Ferretero cuenta con tecnología de inteligencia artificial, es preciso, ágil, eficiente y está diseñado para ayudarle a maximizar el retorno de tus inversiones."
-            bg="purple.300"
+            // bg="purple.300"
+            bg="linear(purple.400 0%, purple.200 90%)"
             logo={logoferreteroia}
             // cta="Ir a Ferreteros.App Ferretero.IA"
             // href="https://ferreteros.app"
@@ -458,14 +461,15 @@ export default function Maintenance() {
             name1="Más tiempo con tus Clientes."
             name2="Menos tiempo haciendo Clicks."
             description="Una solución todo en uno para cada rubro de la Industria. Nuestra plataforma se integra con otras aplicaciones de empresas e instituciones del Estado y está diseñada para ayudarte a ahorrar tiempo y dinero, y así puedas concentrarte en hacer crecer tu negocio."
-            bg="red.400"
+            // bg="red.400"
+            bg="linear(red.400 0%, red.200 90%)"
             logo={logofacturacion}
             // cta="Ir a Ferreteros.App Facturación"
             // href="https://ferreteros.app"
           >
             <Link onClick={onPVOpen} fontWeight={600} fontSize={'lg'}>
               <Flex direction={'row'} align={'left'}>
-                Ir a Ferreteros.App FACTURACION <Right/>
+                Ir a Ferreteros.App Facturación <Right/>
               </Flex>
             </Link>
           </Product>
@@ -505,10 +509,11 @@ export default function Maintenance() {
         </Grid>
         <Stack
           // role={'group'}
-          p={6}
+          p={10}
           // maxW={'330px'}
           // w={'full'}
-          bg="blue.300"
+          // bg="blue.300"
+          bgGradient='linear(cyan.400 0%, cyan.200 90%)'
           boxShadow={'2xl'}
           fontSize={'2xl'}
           rounded={'xl'}
@@ -517,10 +522,10 @@ export default function Maintenance() {
           // width="100%"
           direction="column"
          >
-          <Text textAlign="center">
-            Si estás preparado para elevar tus procesos con herramientas significativamente mejoradas, estamos entusiasmados por colaborar contigo.            
+          <Text textAlign="center" fontSize={{base:"xl", sm:"3xl"}} fontWeight={600} color="blue.700">
+            Veamos como<br/>Ferreteros.app puede ayudarte.
           </Text>
-          <Center>
+          <Center mt={3}>
             <Button colorScheme='blue' size="lg" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSc_cyagdd1l8oWe2Q4e2bwo-5Xo6RW9M66-atmY17Q1-dNyCw/viewform')}>
               Contactar <Right/>
             </Button>
@@ -611,7 +616,7 @@ export default function Maintenance() {
             bg='blackAlpha.300'
             backdropFilter='blur(5px) hue-rotate(5deg)'
           />*/}
-          <ModalContent bg={'yellow.400'}>
+          <ModalContent bgGradient={'linear(yellow.400 30%, yellow.200 90%)'}>
             {/*<ModalHeader>Modal Title SOY FERRETERO</ModalHeader>*/}
             <ModalCloseButton size="lg" />
             <ModalBody>
@@ -711,7 +716,7 @@ export default function Maintenance() {
             bg='blackAlpha.300'
             backdropFilter='blur(5px) hue-rotate(5deg)'
           />*/}
-          <ModalContent bg={'teal.200'}>
+          <ModalContent bgGradient={'linear(teal.300 30%, teal.100 90%)'}>
             {/*<ModalHeader>Modal Title SOY FERRETERO</ModalHeader>*/}
             <ModalCloseButton size="lg" />
             <ModalBody>
@@ -787,7 +792,7 @@ export default function Maintenance() {
         </Modal>
 
          <Modal id="SOYFDI" scrollBehavior="inside" size="full" isCentered isOpen={isSFDIOpen} onClose={onSFDIClose}>
-          <ModalContent bg={'cyan.400'}>
+          <ModalContent bgGradient={'linear(cyan.400 10%, cyan.200 90%)'}>
             <ModalCloseButton size="lg" />
             <ModalBody>
               <Container maxW={'5xl'} pt={12}>
@@ -835,19 +840,22 @@ export default function Maintenance() {
                     </Box>
                     {/*<Heading>Creamos Superdueños de Ferreterías</Heading>*/}
                     <Text color={'black'} fontSize={{base:"md", sm:'lg'}}>
-                      En un mercado global y digital en constante evolución, transformamos la manera de comerciar conectando marcas con el canal tradicional para impulsar el crecimiento de tu marca.<br/><br/><b>¿Qué es Ferreteros.app?</b><br/>Es una aplicación que elimina las barreras entre ferreteros, proveedores y compradores, potenciando las ventas tanto en sell in como en sell out, ofreciendo visibilidad y transparencia en la ejecución en el punto de venta.<br/><br/><b>¿Cómo lo logramos?</b><br/>Mediante la digitalización de la comunicación, planes de crecimiento, promociones y la obtención de insights relevantes. En última instancia, todos buscamos el mismo objetivo: resultados tangibles a corto plazo.
+                      En un mercado global y digital en constante evolución, transformamos la manera de comerciar conectando marcas con el canal tradicional para impulsar el crecimiento de tu marca.
                     </Text>
                   </Stack>
-                  <Flex>
-                      <Image
-                        rounded={'md'}
-                        boxShadow="dark-lg"
-                        alt={'feature image'}
-                        src={ferreterosapp}
-                        objectFit={'cover'}
-                      />
-                  </Flex>
+                  <Stack>
+                    <Image
+                      rounded={'md'}
+                      boxShadow="dark-lg"
+                      alt={'feature image'}
+                      src={ferreterosapp}
+                      objectFit={'cover'}
+                    />
+                  </Stack>
                 </SimpleGrid>
+                <Text color={'black'} fontSize={{base:"md", sm:'lg'}} mt={8}>
+                  <b>¿Qué es Ferreteros.app?</b><br/>Es una aplicación que elimina las barreras entre ferreteros, proveedores y compradores, potenciando las ventas tanto en sell in como en sell out, ofreciendo visibilidad y transparencia en la ejecución en el punto de venta.<br/><br/><b>¿Cómo lo logramos?</b><br/>Mediante la digitalización de la comunicación, planes de crecimiento, promociones y la obtención de insights relevantes. En última instancia, todos buscamos el mismo objetivo: resultados tangibles a corto plazo.
+                </Text>
                 <Stack spacing={4} mt={8}>
                   <Text fontSize="lg" fontWeight={600} color="black">
                     Nuestro compromiso es acompañarte en todo el proceso
