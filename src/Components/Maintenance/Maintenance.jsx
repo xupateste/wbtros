@@ -509,7 +509,7 @@ export default function Maintenance() {
         </Grid>
         <Stack
           // role={'group'}
-          p={10}
+          p={{base:5, sm:10}}
           // maxW={'330px'}
           // w={'full'}
           // bg="blue.300"
